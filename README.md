@@ -70,4 +70,10 @@ The **College Internship Monitoring Dashboard** is designed to provide administr
 ---
 
 ## 📂 Project Structure
-
+IMS-admin-panel/
+│
+├── index.html # Main dashboard UI
+├── style.css # Custom styles
+├── script.js # Dashboard logic & mock data
+├── assets/ # Images & icons
+└── README.md # Project documentation
