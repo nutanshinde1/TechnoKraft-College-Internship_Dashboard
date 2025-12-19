@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechnoKraft Admin | Professional Dashboard</title>
+    <link rel="icon" type="image/png" href="assets/tts-logo-ev.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Michroma:wght@400&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="brand">
+                <div class="brand-logo">
+                    <img src="assets/tts-logo-ev.png" alt="TechnoKraft Logo">
+                </div>
+                <div class="brand-content">
+                    <span class="brand-text">TechnoKraft</span>
+                    <p class="brand-subtitle">Training and Solutions</p>
+                </div>
+            </div>
+        </div>
+
+        <ul class="sidebar-menu">
+            <li class="menu-header">Main Menu</li>
+            <li>
+                <a href="#" class="menu-link active" data-page="dashboard" data-tooltip="Dashboard">
+                    <i class="bi bi-speedometer2"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="menu-link" data-page="interns" data-tooltip="Interns">
+                    <i class="bi bi-people"></i>
+                    <span>Interns</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="#" class="menu-link" data-page="reports" data-tooltip="Reports">
+                    <i class="bi bi-file-earmark-bar-graph"></i>
+                    <span>Reports</span>
+                </a>
+            </li>
+
+             <li class="menu-header">Internship Programs</li>
+            <li>
+                <a href="#" class="menu-link" data-page="events" data-tooltip="Events & Hiring">
+                    <i class="bi bi-calendar-event"></i>
+                    <span>Events & Hiring</span>
+                </a>
+            </li>
+
+            <li class="menu-header">System</li>
+            <li>
+                <a href="#" class="menu-link" data-page="notifications" data-tooltip="Notifications">
+                    <i class="bi bi-bell"></i>
+                    <span>Notifications</span>
+                </a>
+            </li>
+            
+        </ul>
+
+        <div class="sidebar-footer">
+            <div class="user-mini-profile">
+                <img src="https://ui-avatars.com/api/?name=kunal+patil&background=4f46e5&color=fff" alt="User">
+                <div class="user-info">
+                    <h6>HOD </h6>
+                    <small>Super Admin</small>
+                </div>
+            </div>
+            <button id="logoutBtn" class="btn-logout">
+                <i class="bi bi-box-arrow-right"></i>
+            </button>
+        </div>
+    </aside>
+
+    <div class="main-wrapper" id="mainWrapper">
+        
+        <nav class="top-navbar">
+            <div class="nav-left">
+                <button class="toggle-btn" id="sidebarToggle">
+                    <i class="bi bi-list"></i>
+                </button>
+                <h4 class="page-title" id="pageTitle">Dashboard Overview</h4>
+            </div>
+            
+            <div class="nav-right">
+                <div class="search-container d-none d-md-block">
+                    <i class="bi bi-search"></i>
+                    <input type="text" placeholder="Search data...">
+                </div>
+                
+                <!-- User Profile Dropdown -->
+                <div class="user-profile-dropdown">
+                    <button class="user-profile-btn" id="userProfileBtn">
+                        <img src="https://ui-avatars.com/api/?name=kunal+patil&background=4f46e5&color=fff" alt="User" class="user-avatar">
+                        <div class="user-details">
+                            <div class="user-name">kunal patil</div>
+                            <div class="user-role">Super Admin</div>
+                        </div>
+                        <i class="bi bi-chevron-down dropdown-arrow"></i>
+                    </button>
+                    
+                    <div class="user-dropdown-menu" id="userDropdown">
+                        <div class="dropdown-header">
+                            <h6>kunal patil</h6>
+                            <p>kunal.patil@technokraft.com</p>
+                        </div>
+                        <a href="#" class="dropdown-item" data-action="profile">
+                            <i class="bi bi-person"></i>
+                            <span>My Profile</span>
+                        </a>
+                        <a href="#" class="dropdown-item" data-action="settings">
+                            <i class="bi bi-gear"></i>
+                            <span>Account Settings</span>
+                        </a>
+                        <a href="#" class="dropdown-item" data-action="reset-password">
+                            <i class="bi bi-key"></i>
+                            <span>Reset Password</span>
+                        </a>
+                        <a href="#" class="dropdown-item" data-action="notifications">
+                            <i class="bi bi-bell"></i>
+                            <span>Notifications</span>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item" data-action="help">
+                            <i class="bi bi-question-circle"></i>
+                            <span>Help & Support</span>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item danger" data-action="logout">
+                            <i class="bi bi-box-arrow-right"></i>
+                            <span>Logout</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <main class="content-area">
+            
+            <div id="dashboard" class="view-section active">
+                
+                <div class="row g-3 mb-4">
+                    <div class="col-12 col-sm-6 col-xl-3">
+                        <div class="stat-card">
+                            <div class="stat-icon bg-blue-soft text-blue">
+                                <i class="bi bi-people-fill"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h6>Total Interns</h6>
+                                <h3>342</h3>
+                                <span class="trend up"><i class="bi bi-arrow-up-short"></i> 12.5%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-xl-3">
+                        <div class="stat-card">
+                            <div class="stat-icon bg-green-soft text-green">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h6>Active Status</h6>
+                                <h3>286</h3>
+                                <span class="trend up"><i class="bi bi-arrow-up-short"></i> 8.2%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-xl-3">
+                        <div class="stat-card">
+                            <div class="stat-icon bg-orange-soft text-orange">
+                                <i class="bi bi-hourglass-split"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h6>Pending Review</h6>
+                                <h3>38</h3>
+                                <span class="trend down"><i class="bi bi-arrow-down-short"></i> 3.1%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-xl-3">
+                        <div class="stat-card">
+                            <div class="stat-icon bg-purple-soft text-purple">
+                                <i class="bi bi-briefcase-fill"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h6>Projects Done</h6>
+                                <h3>156</h3>
+                                <span class="trend up"><i class="bi bi-arrow-up-short"></i> 24%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-3 mb-4">
+                    <div class="col-lg-8">
+                        <div class="card h-100 chart-card">
+                            <div class="card-header-custom">
+                                <h5>Enrollment Analytics</h5>
+                                <select class="form-select form-select-sm w-auto">
+                                    <option>This Year</option>
+                                    <option>Last Year</option>
+                                </select>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="mainChart" height="280"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card h-100 chart-card">
+                            <div class="card-header-custom">
+                                <h5>Intern Distribution</h5>
+                            </div>
+                            <div class="card-body d-flex align-items-center justify-content-center">
+                                <div style="width: 100%; max-width: 280px;">
+                                    <canvas id="doughnutChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Stats Section -->
+                <div class="row g-3 mb-4">
+                    <div class="col-lg-8">
+                        <div class="card table-card">
+                            <div class="card-header-custom">
+                                <div>
+                                    <h5>Recent Onboarding</h5>
+                                    <p class="text-muted mb-0 sm-text">Manage the latest intern entries</p>
+                                </div>
+                                <button class="btn btn-primary-custom" data-bs-toggle="modal" data-bs-target="#addModal">
+                                    <i class="bi bi-plus-lg"></i> Add New
+                                </button>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table custom-table mb-0" id="internTable">
+                                        <thead>
+                                            <tr>
+                                                <th>Profile</th>
+                                                <th>Department</th>
+                                                <th>Joined Date</th>
+                                                <th>Status</th>
+                                                <th class="text-end">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tableBody">
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4">
+                        <div class="card chart-card h-100">
+                            <div class="card-header-custom">
+                                <h5>Recent Activity</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="activity-item">
+                                    <div class="activity-icon bg-blue-soft text-blue">
+                                        <i class="bi bi-person-plus"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <p><strong>Priya patil</strong> joined Software Development team</p>
+                                        <span class="activity-time">2 hours ago</span>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon bg-green-soft text-green">
+                                        <i class="bi bi-check-circle"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <p><strong>kunal Verma</strong> completed onboarding</p>
+                                        <span class="activity-time">5 hours ago</span>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon bg-orange-soft text-orange">
+                                        <i class="bi bi-file-text"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <p><strong>Amit Patel</strong> submitted project report</p>
+                                        <span class="activity-time">1 day ago</span>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon bg-purple-soft text-purple">
+                                        <i class="bi bi-award"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <p><strong>Sneha Reddy</strong> received certification</p>
+                                        <span class="activity-time">2 days ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Department Performance -->
+                <div class="row g-3 mb-4">
+                    <div class="col-12">
+                        <div class="card chart-card">
+                            <div class="card-header-custom">
+                                <h5>Department Performance</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="quick-stats">
+                                    <div class="quick-stat-item">
+                                        <h6>Software Development</h6>
+                                        <div class="value">124</div>
+                                        <span class="trend up"><i class="bi bi-arrow-up-short"></i> 15%</span>
+                                    </div>
+                                    <div class="quick-stat-item">
+                                        <h6>Application Development</h6>
+                                        <div class="value">89</div>
+                                        <span class="trend up"><i class="bi bi-arrow-up-short"></i> 8%</span>
+                                    </div>
+                                    <div class="quick-stat-item">
+                                        <h6>Web Development</h6>
+                                        <div class="value">76</div>
+                                        <span class="trend down"><i class="bi bi-arrow-down-short"></i> 3%</span>
+                                    </div>
+                                    <div class="quick-stat-item">
+                                        <h6>Frontend Development</h6>
+                                        <div class="value">53</div>
+                                        <span class="trend up"><i class="bi bi-arrow-up-short"></i> 6%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="interns" class="view-section">
+
+    <!-- Sub Navigation -->
+    <div class="d-flex gap-2 mb-4">
+        <button class="btn btn-outline-primary btn-sm" onclick="showInternTab('internList')">Intern List</button>
+        <button class="btn btn-outline-primary btn-sm" onclick="showInternTab('attendance')">Attendance</button>
+        <button class="btn btn-outline-primary btn-sm" onclick="showInternTab('workLogs')">Work Logs</button>
+        <button class="btn btn-outline-primary btn-sm" onclick="showInternTab('projects')">Project Progress</button>
+        <button class="btn btn-outline-primary btn-sm" onclick="showInternTab('jira')">Jira Summary</button>
+        <button class="btn btn-outline-primary btn-sm" onclick="showInternTab('performance')">Performance</button>
+    </div>
+
+    <!-- INTERN LIST -->
+    <div id="internList" class="intern-tab">
+        <h4 class="mb-3">Student Intern List</h4>
+        <div class="table-responsive">
+            <table class="table custom-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>College</th>
+                        <th>Role</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="internTableBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- STUDENT DETAILS -->
+    <div id="internDetails" class="intern-tab d-none">
+        <h4 class="mb-3">Student Details (View Only)</h4>
+        <div id="detailsBox"></div>
+        <button class="btn btn-light mt-3" onclick="backToInternList()">⬅ Back</button>
+    </div>
+
+    <!-- ATTENDANCE -->
+    <div id="attendance" class="intern-tab d-none">
+    <h4 class="mb-3">Intern Attendance</h4>
+
+    <div class="table-responsive">
+        <table class="table custom-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Intern Name</th>
+                    <th>Status</th>
+                    <th>Check-in</th>
+                    <th>Check-out</th>
+                </tr>
+            </thead>
+            <tbody id="attendanceTableBody"></tbody>
+        </table>
+    </div>
+</div>
+
+
+    <!-- WORK LOGS -->
+    <div id="workLogs" class="intern-tab d-none">
+    <h4 class="mb-3">Intern Work Logs</h4>
+
+    <div class="table-responsive">
+        <table class="table custom-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Intern Name</th>
+                    <th>Task Description</th>
+                    <th>Hours</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="workLogTableBody"></tbody>
+        </table>
+    </div>
+</div>
+
+
+    <!-- PROJECT PROGRESS -->
+    <div id="projects" class="intern-tab d-none">
+    <h4 class="mb-3">Intern Project Progress</h4>
+
+    <div class="table-responsive">
+        <table class="table custom-table">
+            <thead>
+                <tr>
+                    <th>Intern Name</th>
+                    <th>Project Name</th>
+                    <th>Progress</th>
+                    <th>Phase</th>
+                    <th>Deadline</th>
+                </tr>
+            </thead>
+            <tbody id="projectProgressBody"></tbody>
+        </table>
+    </div>
+</div>
+
+
+    <!-- JIRA SUMMARY -->
+    <div id="jira" class="intern-tab d-none">
+    <h4 class="mb-3">Jira Ticket Summary</h4>
+
+    <div class="table-responsive">
+        <table class="table custom-table">
+            <thead>
+                <tr>
+                    <th>Intern Name</th>
+                    <th>Project</th>
+                    <th>Total Tickets</th>
+                    <th>Completed</th>
+                    <th>In Progress</th>
+                    <th>Pending</th>
+                </tr>
+            </thead>
+            <tbody id="jiraSummaryBody"></tbody>
+        </table>
+    </div>
+</div>
+
+
+    <!-- PERFORMANCE -->
+    <div id="performance" class="intern-tab d-none">
+    <h4 class="mb-3">Intern Performance Overview</h4>
+
+    <div class="table-responsive">
+        <table class="table custom-table">
+            <thead>
+                <tr>
+                    <th>Intern Name</th>
+                    <th>Attendance %</th>
+                    <th>Task Completion %</th>
+                    <th>Mentor Rating</th>
+                    <th>Overall Grade</th>
+                </tr>
+            </thead>
+            <tbody id="performanceTableBody"></tbody>
+        </table>
+    </div>
+</div>
+
+
+</div>
+
+            
+            <div id="reports" class="view-section">
+
+    <!-- Sub Navigation -->
+    <div class="d-flex gap-2 mb-4">
+        <button class="btn btn-outline-primary btn-sm" onclick="showReportTab('attendanceReport')">
+            Attendance Report
+        </button>
+        <button class="btn btn-outline-primary btn-sm" onclick="showReportTab('internshipSummary')">
+            Internship Summary
+        </button>
+        <button class="btn btn-outline-primary btn-sm" onclick="showReportTab('workLogSummary')">
+            Work Log Summary
+        </button>
+    </div>
+
+    <!-- Attendance Report -->
+    <div id="attendanceReport" class="report-tab">
+        <h4 class="mb-3">Attendance Report</h4>
+
+        <div class="table-responsive mb-3">
+            <table class="table custom-table">
+                <thead>
+                    <tr>
+                        <th>Intern Name</th>
+                        <th>Total Days</th>
+                        <th>Present</th>
+                        <th>Absent</th>
+                        <th>Attendance %</th>
+                    </tr>
+                </thead>
+                <tbody id="attendanceReportBody"></tbody>
+            </table>
+        </div>
+
+        <button class="btn btn-success btn-sm me-2">
+            <i class="bi bi-file-earmark-excel"></i> Export Excel
+        </button>
+        <button class="btn btn-danger btn-sm">
+            <i class="bi bi-file-earmark-pdf"></i> Export PDF
+        </button>
+    </div>
+
+    <!-- Internship Summary -->
+    <div id="internshipSummary" class="report-tab d-none">
+        <h4 class="mb-3">Internship Summary Report</h4>
+
+        <table class="table custom-table">
+            <thead>
+                <tr>
+                    <th>Intern Name</th>
+                    <th>Domain</th>
+                    <th>Status</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                </tr>
+            </thead>
+            <tbody id="internshipSummaryBody"></tbody>
+        </table>
+    </div>
+
+    <!-- Work Log Summary -->
+    <div id="workLogSummary" class="report-tab d-none">
+        <h4 class="mb-3">Work Log Summary</h4>
+
+        <table class="table custom-table">
+            <thead>
+                <tr>
+                    <th>Intern Name</th>
+                    <th>Total Tasks</th>
+                    <th>Total Hours</th>
+                    <th>Last Updated</th>
+                </tr>
+            </thead>
+            <tbody id="workLogSummaryBody"></tbody>
+        </table>
+    </div>
+
+</div>
+
+
+            <!-- Colleges Module -->
+            <div id="colleges" class="view-section">
+                <div class="empty-state">
+                    <i class="bi bi-building"></i>
+                    <h3>College Management</h3>
+                    <p>Sub-modules: All Colleges | College Details | College Admins | College-wise Interns | College Status</p>
+                </div>
+            </div>
+
+            <!-- Events & Hiring Module -->
+            <div id="events" class="view-section">
+
+    <!-- Sub Navigation -->
+    <div class="d-flex gap-2 mb-4">
+        <button class="btn btn-outline-primary btn-sm" onclick="showEventTab('internshipOpenings')">
+            Internship Openings
+        </button>
+        <button class="btn btn-outline-primary btn-sm" onclick="showEventTab('hiringDrives')">
+            Hiring Drives
+        </button>
+        <button class="btn btn-outline-primary btn-sm" onclick="showEventTab('workshops')">
+            Workshops / Webinars
+        </button>
+        <button class="btn btn-outline-primary btn-sm" onclick="showEventTab('announcements')">
+            Announcements
+        </button>
+    </div>
+
+    <!-- Internship Openings -->
+    <div id="internshipOpenings" class="event-tab">
+        <h4 class="mb-3">Current Internship Openings</h4>
+        <table class="table custom-table">
+            <thead>
+                <tr>
+                    <th>Role</th>
+                    <th>Department</th>
+                    <th>Duration</th>
+                    <th>Stipend</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="internshipOpeningsBody"></tbody>
+        </table>
+    </div>
+
+    <!-- Hiring Drives -->
+    <div id="hiringDrives" class="event-tab d-none">
+        <h4 class="mb-3">Upcoming Hiring Drives</h4>
+        <table class="table custom-table">
+            <thead>
+                <tr>
+                    <th>Company</th>
+                    <th>Date</th>
+                    <th>Location</th>
+                    <th>Eligible Domains</th>
+                </tr>
+            </thead>
+            <tbody id="hiringDrivesBody"></tbody>
+        </table>
+    </div>
+
+    <!-- Workshops / Webinars -->
+    <div id="workshops" class="event-tab d-none">
+        <h4 class="mb-3">Workshops & Webinars</h4>
+        <table class="table custom-table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Speaker</th>
+                    <th>Date</th>
+                    <th>Mode</th>
+                </tr>
+            </thead>
+            <tbody id="workshopsBody"></tbody>
+        </table>
+    </div>
+
+    <!-- Announcements -->
+    <div id="announcements" class="event-tab d-none">
+        <h4 class="mb-3">Announcements</h4>
+        <ul class="list-group" id="announcementsBody"></ul>
+    </div>
+
+</div>
+
+
+            <!-- Leave Management Module -->
+            <div id="leave" class="view-section">
+                <div class="empty-state">
+                    <i class="bi bi-calendar-x"></i>
+                    <h3>Leave Management</h3>
+                    <p>Sub-modules: Leave Requests | Approval Status | Leave History</p>
+                </div>
+            </div>
+
+            <!-- Notifications Module -->
+            <div id="notifications" class="view-section">
+                <div class="empty-state">
+                    <i class="bi bi-bell"></i>
+                    <h3>Notifications Center</h3>
+                    <p>Sub-modules: System Notifications | Attendance Alerts | Announcements</p>
+                </div>
+            </div>
+
+            <!-- Audit Logs Module -->
+            <div id="audit" class="view-section">
+                <div class="empty-state">
+                    <i class="bi bi-journal-text"></i>
+                    <h3>Audit & Activity Logs</h3>
+                    <p>Sub-modules: Login Activity | System Changes Log</p>
+                </div>
+            </div>
+            
+            <div id="users" class="view-section">
+                <div class="empty-state">
+                    <i class="bi bi-shield-lock"></i>
+                    <h3>Access Control & User Management</h3>
+                    <p>Sub-modules: Admin Users | College Admins | Role Permissions | User Status</p>
+                </div>
+            </div>
+            
+            <div id="settings" class="view-section">
+                <div class="empty-state">
+                    <i class="bi bi-gear"></i>
+                    <h3>System Configuration</h3>
+                    <p>Sub-modules: Internship Roles | Attendance Rules | Working Hours | Leave Policies | Notifications</p>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Add Intern Modal -->
+    <div class="modal fade custom-modal" id="addModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Onboard New Intern</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addInternForm">
+                        <div class="mb-3">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="formName" placeholder="e.g. Aditi Rao" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="formEmail" placeholder="name@company.com" required>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Department</label>
+                                <select class="form-select" id="formDept">
+                                    <option>Software Development</option>
+                                    <option>Application Development</option>
+                                    <option>Web Development</option>
+                                    <option>Frontend Development</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Status</label>
+                                <select class="form-select" id="formStatus">
+                                    <option value="active">Active</option>
+                                    <option value="pending">Pending</option>
+                                    <option value="inactive">Inactive</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary-custom" id="saveBtn">Save Record</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- User Profile Modal -->
+    <div class="modal fade custom-modal" id="profileModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title">My Profile</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Profile Header -->
+                    <div class="text-center mb-4">
+                        <div class="position-relative d-inline-block">
+                            <img src="https://ui-avatars.com/api/?name=kunal+patil&background=4f46e5&color=fff&size=120" 
+                                 alt="Profile" class="rounded-circle" style="width: 120px; height: 120px;">
+                            <button class="btn btn-sm btn-primary-custom position-absolute" 
+                                    style="bottom: 0; right: 0; border-radius: 50%; width: 36px; height: 36px; padding: 0;">
+                                <i class="bi bi-camera"></i>
+                            </button>
+                        </div>
+                        <h4 class="mt-3 mb-1">kunal patil</h4>
+                        <p class="text-muted mb-0">Super Administrator</p>
+                        <span class="status-badge status-active mt-2">Active</span>
+                    </div>
+
+                    <!-- Profile Details -->
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Full Name</label>
+                            <input type="text" class="form-control" value="kunal patil">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Email Address</label>
+                            <input type="email" class="form-control" value="kunal.patil@technokraft.com">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Phone Number</label>
+                            <input type="tel" class="form-control" value="+91 98765 43210">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Department</label>
+                            <select class="form-select">
+                                <option>Administration</option>
+                                <option>Software Development</option>
+                                <option>Application Development</option>
+                                <option>Web Development</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Role</label>
+                            <select class="form-select">
+                                <option>Super Admin</option>
+                                <option>Admin</option>
+                                <option>Manager</option>
+                                <option>User</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Join Date</label>
+                            <input type="date" class="form-control" value="2023-01-15">
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label fw-semibold">Bio</label>
+                            <textarea class="form-control" rows="3" placeholder="Tell us about yourself...">Experienced administrator with 5+ years in educational technology management.</textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary-custom" onclick="saveProfile()">
+                        <i class="bi bi-check-lg me-1"></i> Save Changes
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Account Settings Modal -->
+    <div class="modal fade custom-modal" id="settingsModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Account Settings</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Settings Tabs -->
+                    <ul class="nav nav-tabs mb-4" role="tablist">
+                        <li class="nav-item">
+                            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#generalTab">
+                                <i class="bi bi-gear me-2"></i>General
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#securityTab">
+                                <i class="bi bi-shield-lock me-2"></i>Security
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#notificationTab">
+                                <i class="bi bi-bell me-2"></i>Notifications
+                            </button>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <!-- General Tab -->
+                        <div class="tab-pane fade show active" id="generalTab">
+                            <h6 class="mb-3">Preferences</h6>
+                            <div class="mb-3">
+                                <label class="form-label">Language</label>
+                                <select class="form-select">
+                                    <option>English (US)</option>
+                                    <option>Hindi</option>
+                                    <option>Marathi</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Timezone</label>
+                                <select class="form-select">
+                                    <option>Asia/Kolkata (IST)</option>
+                                    <option>America/New_York (EST)</option>
+                                    <option>Europe/London (GMT)</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Date Format</label>
+                                <select class="form-select">
+                                    <option>DD/MM/YYYY</option>
+                                    <option>MM/DD/YYYY</option>
+                                    <option>YYYY-MM-DD</option>
+                                </select>
+                            </div>
+                           
+                        </div>
+
+                        <!-- Security Tab -->
+                        <div class="tab-pane fade" id="securityTab">
+                            <h6 class="mb-3">Password</h6>
+                            <div class="mb-3">
+                                <label class="form-label">Current Password</label>
+                                <input type="password" class="form-control" placeholder="Enter current password">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">New Password</label>
+                                <input type="password" class="form-control" placeholder="Enter new password">
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label">Confirm New Password</label>
+                                <input type="password" class="form-control" placeholder="Confirm new password">
+                            </div>
+                            
+                            <h6 class="mb-3">Two-Factor Authentication</h6>
+                            <div class="d-flex align-items-center justify-content-between p-3 bg-light rounded mb-3">
+                                <div>
+                                    <h6 class="mb-1">Enable 2FA</h6>
+                                    <small class="text-muted">Add an extra layer of security</small>
+                                </div>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="enable2FA">
+                                </div>
+                            </div>
+
+                            <h6 class="mb-3">Active Sessions</h6>
+                            <div class="border rounded p-3 mb-2">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <i class="bi bi-laptop text-primary me-2"></i>
+                                        <span class="fw-semibold">Windows - Chrome</span>
+                                        <br>
+                                        <small class="text-muted">Pune, India - Current Session</small>
+                                    </div>
+                                    <span class="status-badge status-active">Active</span>
+                                </div>
+                            </div>
+                            <div class="border rounded p-3">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <i class="bi bi-phone text-primary me-2"></i>
+                                        <span class="fw-semibold">Android - Mobile App</span>
+                                        <br>
+                                        <small class="text-muted">2 hours ago</small>
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-danger">Revoke</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Notifications Tab -->
+                        <div class="tab-pane fade" id="notificationTab">
+                            <h6 class="mb-3">Email Notifications</h6>
+                            <div class="form-check form-switch mb-3">
+                                <input class="form-check-input" type="checkbox" id="emailInterns" checked>
+                                <label class="form-check-label" for="emailInterns">
+                                    <div class="fw-semibold">New Intern Registration</div>
+                                    <small class="text-muted">Receive email when new intern joins</small>
+                                </label>
+                            </div>
+                            <div class="form-check form-switch mb-3">
+                                <input class="form-check-input" type="checkbox" id="emailReports" checked>
+                                <label class="form-check-label" for="emailReports">
+                                    <div class="fw-semibold">Weekly Reports</div>
+                                    <small class="text-muted">Get weekly performance summaries</small>
+                                </label>
+                            </div>
+                            <div class="form-check form-switch mb-3">
+                                <input class="form-check-input" type="checkbox" id="emailTasks">
+                                <label class="form-check-label" for="emailTasks">
+                                    <div class="fw-semibold">Task Assignments</div>
+                                    <small class="text-muted">Notify when tasks are assigned</small>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary-custom" onclick="saveSettings()">
+                        <i class="bi bi-check-lg me-1"></i> Save Settings
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notifications Modal -->
+    <div class="modal fade custom-modal" id="notificationsModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Notifications</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" style="max-height: 500px; overflow-y: auto;">
+                    <!-- Notification Item -->
+                    <div class="d-flex gap-3 p-3 border-bottom notification-item">
+                        <div class="activity-icon bg-blue-soft text-blue">
+                            <i class="bi bi-person-plus"></i>
+                        </div>
+                        <div class="flex-grow-1">
+                            <p class="mb-1"><strong>New Intern Joined</strong></p>
+                            <small class="text-muted">Priya patil joined Software Development team</small>
+                            <div><small class="text-muted">2 hours ago</small></div>
+                        </div>
+                        <button class="btn btn-sm btn-light h-100">
+                            <i class="bi bi-x"></i>
+                        </button>
+                    </div>
+
+                    <div class="d-flex gap-3 p-3 border-bottom notification-item">
+                        <div class="activity-icon bg-green-soft text-green">
+                            <i class="bi bi-check-circle"></i>
+                        </div>
+                        <div class="flex-grow-1">
+                            <p class="mb-1"><strong>Task Completed</strong></p>
+                            <small class="text-muted">Project documentation has been completed</small>
+                            <div><small class="text-muted">5 hours ago</small></div>
+                        </div>
+                        <button class="btn btn-sm btn-light h-100">
+                            <i class="bi bi-x"></i>
+                        </button>
+                    </div>
+
+                    <div class="d-flex gap-3 p-3 border-bottom notification-item">
+                        <div class="activity-icon bg-orange-soft text-orange">
+                            <i class="bi bi-exclamation-triangle"></i>
+                        </div>
+                        <div class="flex-grow-1">
+                            <p class="mb-1"><strong>Pending Review</strong></p>
+                            <small class="text-muted">3 intern applications need your review</small>
+                            <div><small class="text-muted">1 day ago</small></div>
+                        </div>
+                        <button class="btn btn-sm btn-light h-100">
+                            <i class="bi bi-x"></i>
+                        </button>
+                    </div>
+
+                    <div class="d-flex gap-3 p-3 notification-item">
+                        <div class="activity-icon bg-purple-soft text-purple">
+                            <i class="bi bi-bell"></i>
+                        </div>
+                        <div class="flex-grow-1">
+                            <p class="mb-1"><strong>System Update</strong></p>
+                            <small class="text-muted">New features have been added to the dashboard</small>
+                            <div><small class="text-muted">2 days ago</small></div>
+                        </div>
+                        <button class="btn btn-sm btn-light h-100">
+                            <i class="bi bi-x"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary-custom">Mark All as Read</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+</html>
