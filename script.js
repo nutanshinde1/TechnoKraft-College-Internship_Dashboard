@@ -191,9 +191,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 4. Mock Data & Table Rendering ---
     const interns = [
-        { id: 1, name: "Priya patil", dept: "Development", date: "Oct 24, 2024", status: "active" },
-        { id: 2, name: "kunal Verma", dept: "Design", date: "Oct 22, 2024", status: "active" },
-        { id: 3, name: "Amit Patel", dept: "Marketing", date: "Oct 20, 2024", status: "pending" },
+        { id: 1, name: "Sakshi Waghmare", dept: "Development", date: "Oct 24, 2024", status: "active" },
+        { id: 2, name: "Satvik Das", dept: "Design", date: "Oct 22, 2024", status: "active" },
+        { id: 3, name: "Abhi Patil", dept: "Marketing", date: "Oct 20, 2024", status: "pending" },
         { id: 4, name: "Sneha Reddy", dept: "Finance", date: "Oct 18, 2024", status: "inactive" },
         { id: 5, name: "Vikram Singh", dept: "Development", date: "Oct 15, 2024", status: "active" }
     ];
@@ -219,12 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <td>${intern.dept}</td>
                     <td>${intern.date}</td>
                     <td><span class="status-badge status-${intern.status}">${intern.status.charAt(0).toUpperCase() + intern.status.slice(1)}</span></td>
-                    <td class="text-end">
-                        <div class="d-flex gap-2 justify-content-end">
-                            <button class="btn-sm-action" onclick="editUser(${intern.id})" title="Edit"><i class="bi bi-pencil"></i></button>
-                            <button class="btn-sm-action" onclick="deleteUser(${intern.id})" title="Delete"><i class="bi bi-trash"></i></button>
-                        </div>
-                    </td>
+                    
                 </tr>
             `;
             tableBody.insertAdjacentHTML('beforeend', row);
@@ -362,26 +357,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Helper functions
-window.deleteUser = (id) => {
-    Swal.fire({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#ef4444',
-        cancelButtonColor: '#cbd5e1',
-        confirmButtonText: 'Delete'
-    }).then((result) => {
-        if (result.isConfirmed) {
-            Swal.fire('Deleted!', 'User has been removed.', 'success');
-        }
-    });
-};
 
-window.editUser = (id) => {
-    const modal = new bootstrap.Modal(document.getElementById('addModal'));
-    modal.show();
-};
+
 
 // Profile and Settings Save Functions
 window.saveProfile = () => {
