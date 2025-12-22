@@ -5,7 +5,7 @@ This dashboard helps colleges and training institutions **track, monitor, and an
 
 ---
 
-## 📌 Project Overview
+## 📌 Project Overview 
 
 The **College Internship Monitoring Dashboard** is designed to provide administrators (HOD / College Admin) with a centralized view of:
 
