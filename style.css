@@ -874,3 +874,37 @@ body {
         padding: 20px;
     }
 }
+
+.intern-name-link {
+  color: #4f46e5;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.intern-name-link:hover {
+  text-decoration: underline;
+}
+
+.card {
+  border: none;
+  border-radius: 12px;
+}
+
+.card-body h6 {
+  font-weight: 600;
+}
+
+.badge {
+  font-size: 0.8rem;
+  padding: 6px 10px;
+}
+
+#internDetails .card {
+  border-radius: 14px;
+}
+
+#internDetails h5 {
+  font-weight: 600;
+}
+

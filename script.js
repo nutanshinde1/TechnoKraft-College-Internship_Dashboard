@@ -513,13 +513,16 @@ internData.forEach(intern => {
   internTableBody.innerHTML += `
     <tr>
       <td>${intern.id}</td>
-      <td>${intern.name}</td>
+      <td>
+      <a href="javascript:void(0)"
+         class="intern-name-link"
+         onclick="viewIntern(${intern.id})">
+        ${intern.name}
+      </a>
+    </td>
       <td>${intern.college}</td>
       <td>${intern.domain}</td>
       <td>${intern.status}</td>
-      <td>
-        <button class="btn btn-sm btn-primary" onclick="viewIntern(${intern.id})">View</button>
-      </td>
     </tr>
   `;
 });
@@ -534,21 +537,113 @@ function showInternTab(tabId) {
 
 // View details
 function viewIntern(id) {
+
+  document.getElementById("internGraphSection").classList.remove("d-none");
+
   const intern = internData.find(i => i.id === id);
   showInternTab("internDetails");
 
   document.getElementById("detailsBox").innerHTML = `
-    <p><strong>Name:</strong> ${intern.name}</p>
-    <p><strong>Email:</strong> ${intern.email}</p>
-    <p><strong>College:</strong> ${intern.college}</p>
-    <p><strong>Domain:</strong> ${intern.domain}</p>
-    <p><strong>Attendance:</strong> ${intern.attendance}</p>
-    <p><strong>Performance:</strong> ${intern.performance}</p>
+  <div class="row g-3">
+
+    <!-- Profile Card -->
+    <div class="col-lg-4">
+      <div class="card h-100">
+        <div class="card-body text-center">
+          <img 
+            src="https://ui-avatars.com/api/?name=${intern.name}&background=4f46e5&color=fff&size=100"
+            class="rounded-circle mb-3"
+          />
+          <h5>${intern.name}</h5>
+          <p class="text-muted mb-1">${intern.domain}</p>
+          <span class="badge bg-success">${intern.status}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Details -->
+    <div class="col-lg-8">
+      <div class="card mb-3">
+        <div class="card-body">
+          <h6 class="mb-3">Basic Information</h6>
+          <div class="row">
+            <div class="col-md-6 mb-2"><strong>Email:</strong> ${intern.email}</div>
+            <div class="col-md-6 mb-2"><strong>College:</strong> ${intern.college}</div>
+            <div class="col-md-6 mb-2"><strong>Domain:</strong> ${intern.domain}</div>
+            <div class="col-md-6 mb-2"><strong>Status:</strong> ${intern.status}</div>
+          </div>
+        </div>
+      </div>
+
+      
+
+      <!-- Stats -->
+      <div class="row g-3">
+        <div class="col-md-6">
+          <div class="card text-center">
+            <div class="card-body">
+              <h6 class="text-muted">Attendance</h6>
+              <h3 class="text-primary">${intern.attendance}</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card text-center">
+            <div class="card-body">
+              <h6 class="text-muted">Performance</h6>
+              <h3 class="text-success">${intern.performance}</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
   `;
 }
 
+setTimeout(() => {
+  const ctx = document.getElementById("internChart").getContext("2d");
+
+  if (window.internChartInstance) {
+    window.internChartInstance.destroy();
+  }
+
+  window.internChartInstance = new Chart(ctx, {
+    type: "line",
+    data: {
+      labels: ["Week 1", "Week 2", "Week 3", "Week 4"],
+      datasets: [
+        {
+          label: "Task Completion %",
+          data: [60, 70, 85, 95],
+          borderColor: "#4f46e5",
+          backgroundColor: "rgba(79,70,229,0.15)",
+          tension: 0.4,
+          fill: true,
+          pointRadius: 4
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: false }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          max: 100
+        }
+      }
+    }
+  });
+}, 0);
+
 function backToInternList() {
   showInternTab("internList");
+  document.getElementById("internGraphSection").classList.add("d-none");
 }
 
 const attendanceData = [
@@ -993,3 +1088,4 @@ announcementsData.forEach(msg => {
     <li class="list-group-item">${msg}</li>
   `;
 });
+

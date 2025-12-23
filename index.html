@@ -368,7 +368,6 @@
                         <th>College</th>
                         <th>Role</th>
                         <th>Status</th>
-                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody id="internTableBody"></tbody>
@@ -378,10 +377,34 @@
 
     <!-- STUDENT DETAILS -->
     <div id="internDetails" class="intern-tab d-none">
-        <h4 class="mb-3">Student Details (View Only)</h4>
-        <div id="detailsBox"></div>
-        <button class="btn btn-light mt-3" onclick="backToInternList()">⬅ Back</button>
+
+  <!-- Top Header -->
+  <div class="d-flex align-items-center justify-content-between mb-4">
+    <div class="d-flex align-items-center gap-3">
+      <button class="btn btn-light btn-sm" onclick="backToInternList()">
+        ← Back
+      </button>
+      <h4 class="mb-0">Intern Dashboard</h4>
     </div>
+  </div>
+
+  <!-- Dashboard Content -->
+  <div id="detailsBox"></div>
+
+
+</div>
+<!-- Intern Analytics -->
+<div id="internGraphSection" class="mt-4 d-none">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="mb-3">Intern Progress Overview</h5>
+      <canvas id="internChart" height="120"></canvas>
+    </div>
+  </div>
+</div>
+
+
+
 
     <!-- ATTENDANCE -->
     <div id="attendance" class="intern-tab d-none">
@@ -1049,11 +1072,20 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <!-- Bootstrap JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- Chart.js (graph library) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+
+<!-- Your JS file (uses Chart.js) -->
+<script src="script.js"></script>
+
+<!-- SweetAlert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
+
 
 </body>
 </html>
