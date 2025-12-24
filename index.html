@@ -381,7 +381,7 @@
   <!-- Top Header -->
   <div class="d-flex align-items-center justify-content-between mb-4">
     <div class="d-flex align-items-center gap-3">
-      <button class="btn btn-light btn-sm" onclick="backToInternList()">
+      <button class="btn btn-light btn-sm fw-bold" onclick="backToInternList()">
         ← Back
       </button>
       <h4 class="mb-0">Intern Dashboard</h4>
@@ -390,6 +390,47 @@
 
   <!-- Dashboard Content -->
   <div id="detailsBox"></div>
+
+  <!-- Task Summary Section -->
+<div class="row g-3 mt-3" id="taskSummarySection">
+
+  <div class="col-md-3">
+    <div class="card text-center">
+      <div class="card-body">
+        <h6>Assigned Tasks</h6>
+        <h3 id="assignedTasks">0</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="card text-center">
+      <div class="card-body">
+        <h6>Completed</h6>
+        <h3 class="text-success" id="completedTasks">0</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="card text-center">
+      <div class="card-body">
+        <h6>Pending</h6>
+        <h3 class="text-warning" id="pendingTasks">0</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="card text-center">
+      <div class="card-body">
+        <h6>Failed</h6>
+        <h3 class="text-danger" id="failedTasks">0</h3>
+      </div>
+    </div>
+  </div>
+
+</div>
 
 
 </div>
@@ -1086,6 +1127,3 @@
 </body>
 </html>
 
-
-</body>
-</html>
