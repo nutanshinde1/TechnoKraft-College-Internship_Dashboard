@@ -15,10 +15,6 @@ The **College Internship Monitoring Dashboard** is designed to provide administr
 - Reports and analytics
 - Internship opportunities & events
 
-> ⚠️ Note:  
-> This is a **frontend-only project** created for **internship evaluation and UI demonstration** purposes.  
-> No backend or database integration is included yet.
-
 ---
 
 ## 🧩 Key Features
