@@ -1,57 +1,28 @@
-# 🎓 College Internship Monitoring Dashboard
 
-A modern **Admin-side College Internship Monitoring Dashboard** built using **HTML, CSS, Bootstrap, and JavaScript**.  
-This dashboard helps colleges and training institutions **track, monitor, and analyze internship programs** efficiently in a **view-only admin format**.
+# 🎓 TechnoKraft College Internship Dashboard
 
----
+This interactive dashboard helps interns, students, and trainers easily manage, track, and analyze internship progress and performance.
 
-## 📌 Project Overview 
- 
-The **College Internship Monitoring Dashboard** is designed to provide administrators (HOD / College Admin) with a centralized view of:
+## 🚀 Live Site
 
-- Student intern details
-- Internship progress & performance
-- Attendance and work logs
-- Reports and analytics
-- Internship opportunities & events
+👉 https://nutanshinde1.github.io/TechnoKraft-College-Internship_Dashboard/
 
----
+## 🔥 💡 Features
 
-## 🧩 Key Features
+📊 Internship Overview
+Real-time performance statistics & intern summaries.
 
-### 📊 Dashboard Overview
-- Total interns count
-- Active / Pending / Inactive status
-- Internship analytics using charts
-- Recent onboarding & activity feed
+📅 Progress Tracking
+Track project milestones, completion rates, and timelines.
 
-### 👩‍🎓 Intern Management (View Only)
-- Student intern list
-- Intern profile view
-- Attendance records
-- Work logs
-- Project progress tracking
-- Jira-style task summary
-- Performance overview
+📈 Visual Reports & Charts
+Data-driven insights to help colleges, trainers and students.
 
-### 📈 Reports Module
-- Attendance report
-- Internship summary
-- Work log summary
-- Export UI buttons (Excel / PDF – UI only)
+📂 Smart Navigation
+Easy-to-use interface for fast access to key sections.
 
-### 📅 Events & Hiring
-- Current internship openings
-- Upcoming hiring drives
-- Workshops & webinars
-- Important announcements
-
-### 🔔 System Modules
-- Notifications center
-- User profile & account settings
-- Role-based admin view (UI)
-
----
+🔐 Secure Dashboard Layout
+Professional dashboard for admin and student views.
 
 ## 🛠️ Technologies Used
 
@@ -63,17 +34,17 @@ The **College Internship Monitoring Dashboard** is designed to provide administr
 - **SweetAlert2** (for alerts & modals)
 - **Bootstrap Icons**
 
+## 📌 Use Cases
+
+✔ College internship tracking
+✔ Student performance insights
+✔ Training progress monitoring
+
+## 📞 Contact
+
+📧 Connect for support or features!
+
 ---
 
-## 📂 Project Structure
 
-IMS-admin-panel/
-│
-├── index.html        # Main dashboard UI
-├── style.css         # Custom styles
-├── script.js         # Dashboard logic & mock data
-│
-├── assets/           # Images & icons
-│
-└── README.md         # Project documentation
 
