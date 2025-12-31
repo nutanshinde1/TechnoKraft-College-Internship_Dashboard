@@ -1,4 +1,4 @@
-
+ 
 # 🎓 TechnoKraft College Internship Dashboard
 
 This interactive dashboard helps interns, students, and trainers easily manage, track, and analyze internship progress and performance.
