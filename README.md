@@ -3,7 +3,7 @@
 
 This interactive dashboard helps interns, students, and trainers easily manage, track, and analyze internship progress and performance.
 
-## 🚀 Live Site 
+## 🚀 Live Site  
 
 👉 https://nutanshinde1.github.io/TechnoKraft-College-Internship_Dashboard/
 
